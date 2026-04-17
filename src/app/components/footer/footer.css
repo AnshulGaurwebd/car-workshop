@@ -1,0 +1,18 @@
+@import "tailwindcss";
+.footer{
+    color: #f9a12e;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    display: flex;
+    margin: 0 30px;
+}
+.imgContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icon{
+    opacity: 0.6;
+    cursor: pointer;
+}

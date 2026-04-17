@@ -1,0 +1,102 @@
+/* addons.css */
+@import "tailwindcss";
+
+.container-slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000000;
+    cursor: pointer; /* Ensure the user knows the whole area is clickable */
+    user-select: none;
+    visibility: hidden;
+}
+
+.slider-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1200px; /* Increased for better 3D depth */
+    perspective-origin: 50% 0%;
+}
+
+.card {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 75%;
+    height:700px;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    background: #000000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    will-change: transform, opacity; /* PINPOINT: Tells browser to use GPU */
+    backface-visibility: hidden; /* PINPOINT: Reduces 3D rendering load */
+    transform-style: preserve-3d; /* PINPOINT: Ensures smooth 3D stacking */
+    pointer-events: none;
+}
+
+.card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.copy-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 10;
+    word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal; 
+}
+
+.slider-title {
+    position: relative;
+    text-align: center;
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FEEBC8;
+    margin: 5px;
+    word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal; 
+  max-width: 100%;
+  font-size: clamp(1rem, 8vw, 3rem);
+  hyphens: none;
+}
+.content{
+    color: rgb(243, 196, 103);
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
+    margin: 5px;
+}
+
+.slider-title span {
+    position: relative;
+    display: inline-block;
+    transform: translateY(-200%); /* Initial hidden state */
+}
+
+@media(max-width: 900px){
+    .card {
+        width: 90%;
+        height: 500px;
+    }
+    .slider-title {
+        font-size: 8vw;
+    }
+}

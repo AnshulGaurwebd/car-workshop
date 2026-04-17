@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+.interior {
+  color: #FEEBC8;
+}
+
+.interiorpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.4s ease-in-out;
+  width: 90vw;
+  max-width: 1000px;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 15px; 
+}
+
+.service:active {
+  transform: scale(0.98);
+  box-shadow: 10px 10px 20px rgba(128, 75, 39, 0.8);
+}
+
+@media (hover: hover) {
+  .service:hover {
+    box-shadow: 20px 20px 30px rgba(128, 75, 39, 0.8);
+    color: #f9a12e;
+    transform: translateY(-5px);
+  }
+}
+
+.photo1, .photo2, .photo3 {
+  width: 100%;
+  height: 30vh;
+  min-height: 250px;
+  border-radius: 10px;
+}
+
+.photo1 { background: url('/front.jpg') center/cover no-repeat; }
+.photo2 { background: url('/side.jpg') center/cover no-repeat; }
+.photo3 { background: url('/left.jpg') center/cover no-repeat; }
+
+.detail {
+  width: 100%;
+  color: #FEEBC8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .interiorpage {
+    margin-top: 150px;
+  }
+
+  .service {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .photo1, .photo2, .photo3 {
+    width: 45%;
+    height: 40vh;
+  }
+
+  .detail {
+    width: 45%;
+  }
+
+  .detail h1, .detail h4 {
+    text-align: left; 
+  }
+}

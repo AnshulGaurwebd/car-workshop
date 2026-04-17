@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+.slide-container {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: opacity 1.9s ease-out, transform 1.9s ease-out;
+  margin: 30px 0; 
+}
+
+.slide-container.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.slide {
+  background: url('/bmw.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.head {
+  font-weight: bolder;
+  font-size: 2rem; 
+  text-align: center;
+  margin: 30px 10px;
+  color: white; 
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+}
+
+.pre {
+  color: #D4762C;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 30px; 
+  margin: 30px 0; 
+}
+
+.interior, .exterior {
+  width: 90vw; 
+  max-width: 500px; 
+  height: 40vh; 
+  min-height: 250px;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out; 
+  
+  color: white; 
+  font-size: 40px; 
+  font-weight: bolder;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); 
+}
+
+.interior {
+  background: url('/front.jpg') center/cover no-repeat;
+}
+
+.exterior {
+  background: url('/left.jpg') center/cover no-repeat;
+}
+
+.interior:active, .exterior:active {
+  transform: scale(0.96); 
+  box-shadow: 5px 5px 15px rgba(128, 75, 39, 0.8);
+}
+
+@media (hover: hover) {
+  .interior:hover, .exterior:hover {
+    transform: scale(1.05); 
+    box-shadow: 15px 15px 30px rgba(128, 75, 39, 0.8);
+    font-size: 50px; 
+  }
+  
+  .interior:hover {
+    color: rgb(150, 200, 200);
+  }
+  
+  .exterior:hover {
+    color: rgb(200, 200, 200); 
+  }
+}
+
+.text {
+  font-weight: bold;    
+}
+
+@media (min-width: 768px) {
+  .head {
+    font-size: 3rem; 
+    margin: 50px;
+  }
+
+  .cards {
+    flex-direction: row; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .interior, .exterior {
+    width: 40vw; 
+    height: 50vh;
+  }
+}
