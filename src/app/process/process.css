@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 999; /* Above the images */
+    z-index: 999; 
     pointer-events: none;
     transition: opacity 0.5s ease;
 }
@@ -74,7 +74,7 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
-    opacity: 0.6; /* Faded background text */
+    opacity: 0.6; 
 }
 
 .intro-copy p {
@@ -97,7 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 100vh 0; /* Creates scroll distance */
+    margin: 100vh 0; 
 }
 
 .process-section h1 {

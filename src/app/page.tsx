@@ -10,11 +10,9 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const digit3Ref = useRef<HTMLDivElement>(null);
   
-  // State to track if the animation should be allowed to run
   const [isFirstVisit, setIsFirstVisit] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Check if the animation has already played in this browser session
     const hasSeenAnimation = sessionStorage.getItem("hasSeenAnimation");
     if (hasSeenAnimation) {
       setIsFirstVisit(false);
@@ -24,7 +22,6 @@ export default function Home() {
   }, []);
 
   useGSAP(() => {
-    // 1. Guard Clause: If it's not the first visit, skip everything and show content
     if (isFirstVisit === null) return;
     if (isFirstVisit === false) {
       
@@ -33,9 +30,7 @@ export default function Home() {
       return;
     }
 
-    // Only run if we've confirmed it's the first visit
     if (isFirstVisit === true) {
-      // Generate digits
       if (digit3Ref.current) {
         for (let i = 0; i < 2; i++) {
           for (let j = 0; j < 10; j++) {
@@ -71,7 +66,6 @@ export default function Home() {
 
       const tl = gsap.timeline({
         onComplete: () => {
-          // Mark as seen once animation is finished
           sessionStorage.setItem("hasSeenAnimation", "true");
         }
       });
@@ -105,7 +99,6 @@ export default function Home() {
     }
   }, { scope: containerRef, dependencies: [isFirstVisit] });
 
-  // Prevent flicker by not rendering until session check is done
   if (isFirstVisit === null) return <div className="bg-black h-screen w-full" />;
 
   

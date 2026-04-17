@@ -17,7 +17,6 @@ export default function RootLayout({
   return(
     <html lang="en" className="bg-black font-sans antialiased">
       <head>
-        {/* Forces the browser to upgrade any insecure HTTP requests to HTTPS */}
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
       <body>

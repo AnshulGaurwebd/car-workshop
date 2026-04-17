@@ -34,7 +34,7 @@ img{
 
 
 .heros-container {
-  position: relative; /* Acts as the anchor for the text */
+  position: relative; 
   width: 100vw;
   height: 100vh;
 }
